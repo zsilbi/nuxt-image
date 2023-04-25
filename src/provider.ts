@@ -6,10 +6,10 @@ import { createResolver, resolvePath } from '@nuxt/kit'
 import { hash } from 'ohash'
 import type { InputProvider, ImageModuleProvider, ProviderSetup } from './types'
 import type { ModuleOptions } from './module'
-import { ipxSetup } from './ipx'
 
 const BuiltInProviders = [
   'cloudflare',
+  'cloudflare-image',
   'cloudinary',
   'contentful',
   'cloudimage',
@@ -18,7 +18,6 @@ const BuiltInProviders = [
   'imagekit',
   'gumlet',
   'imgix',
-  'ipx',
   'netlify',
   'layer0',
   'edgio',
@@ -33,9 +32,6 @@ const BuiltInProviders = [
 ]
 
 export const providerSetup: Record<string, ProviderSetup> = {
-  // IPX
-  ipx: ipxSetup,
-  static: ipxSetup,
 
   // https://vercel.com/docs/more/adding-your-framework#images
   vercel (_providerOptions, moduleOptions, nuxt: Nuxt) {
@@ -110,6 +106,6 @@ export function detectProvider (userInput?: string) {
   if (process.env.VERCEL || process.env.VERCEL_ENV || process.env.NOW_BUILDER) {
     return 'vercel'
   }
-
-  return 'ipx'
+  
+  return 'cloudflareImage'
 }

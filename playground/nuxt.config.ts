@@ -26,6 +26,9 @@ export default defineNuxtConfig({
     cloudflare: {
       baseURL: 'https://that-test.site'
     },
+    cloudflareImage: {
+      baseURL: 'https://that-test.site'
+    },
     cloudinary: {
       baseURL: 'https://res.cloudinary.com/nuxt/image/upload/'
     },

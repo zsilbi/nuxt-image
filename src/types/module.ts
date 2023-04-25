@@ -1,4 +1,3 @@
-import type { IPXOptions } from 'ipx'
 import type { ModuleOptions } from '../module'
 import type { ImageModifiers } from './image'
 
@@ -42,6 +41,7 @@ export interface CloudinaryOptions {
 }
 
 export interface ImageProviders {
+  cloudflareImage?: any
   cloudflare?: any
   cloudinary?: Partial<CloudinaryOptions>
   contentful?: any
@@ -58,7 +58,6 @@ export interface ImageProviders {
   storyblok?: any,
   strapi?: any,
   imageengine?: any,
-  ipx?: Partial<IPXOptions>
   static?: Partial<IPXOptions>
 }
 
