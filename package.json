@@ -20,7 +20,7 @@
     "docs:dev": "pnpm nuxt dev docs",
     "lint": "eslint --ext .ts --ext .vue .",
     "prepack": "pnpm build",
-    "release": "pnpm test && standard-version && git push --follow-tags && npm publish",
+    "release": "pnpm test && standard-version && git push --follow-tags",
     "test": "pnpm lint"
   },
   "dependencies": {
